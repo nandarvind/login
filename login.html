@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:whitesmoke;  
+    font-family: Arial, Helvetica, sans-serif;  
+}  
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: powderblue;  
+        border-radius: 15px ;  
+          
+}  
+h2{  
+    text-align: center;  
+    color: grey;  
+    padding: 20px;  
+}  
+label{  
+    color:grey;  
+    font-size: 17px;  
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+span{  
+    color: black;  
+    font-size: 17px;  
+}  
+a{  
+    float:left;  
+    background-color:azure;  
+}  
+        
+    </style>
+
+</head>
+<body>    
+    <h2>Login Form</h2><br>    
+    <div class="login">    
+    <form id="login"  name= "form" action="#" method="post" >    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="Pass" id="Pass" placeholder="Password" >    
+        <br><br>    
+        <button type="submit" onclick=" return validateform()">Login</button>
+        <br><br>    
+            
+        <a href="#">Forgot Password?</a><span> Click Here! </span>    
+    </form>     
+</div>    
+</body>    
+</html>     
+<script >
+
+function validateform(){
+    var name=document.form.Uname.value; 
+    var password=document.form.Pass.value;
+    var status= true;
+        if (name==null || name==""){  
+    alert("Username can't be blank");  
+    return false;  
+    }
+
+    re = /^\w+$/;
+    if(!re.test(form.Uname.value)) {
+      alert( "Username must contain only letters and numbers ");
+      form.Uname.focus();
+      return false;
+    }
+
+    
+        if (password==null || password==""){
+    alert("Password can't be blank");
+    return false;   
+        }
+
+
+    re = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;  
+    if(!re.test(form.Pass.value)) {
+      alert( "password must contain  8 character length and atleast one digit and one character ");
+      form.Pass.focus();
+      return false;
+    }
+
+    else{
+        alert('SUCCESS');
+        window.location.reload()
+        return true;
+        }
+    }
+        
+
+    </script>
